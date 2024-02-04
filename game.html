@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Raumschiffschlacht</title>
+   <style>
+      canvas {
+         background: rgb(107, 107, 153);
+      }
+   </style>
+
+   <script>
+
+      let KEY_SPACE = false;
+      let KEY_UP = false;
+      let KEY_DOWN = false;
+      let canvas;
+      let ctx;
+      let backgroundImage = new Image();
+      
+      let rocket = {
+         x: 100,
+         y: 200,
+         width: 150,
+         height: 80,
+         src: 'img/rocket.png'
+      };
+
+      let ufos = [];
+
+      document.onkeydown = function(e) {
+         if(e.keyCode == 32) {
+            KEY_SPACE = true;
+         }
+         if(e.keyCode == 38) {
+            KEY_UP = true;
+         }
+         if(e.keyCode == 40) {
+            KEY_DOWN = true;
+         }
+      };
+
+      document.onkeyup = function(e) {
+         if(e.keyCode == 32) {
+            KEY_SPACE = false;
+         }
+         if(e.keyCode == 38) {
+            KEY_UP = false;
+         }
+         if(e.keyCode == 40) {
+            KEY_DOWN = false;
+         }
+      };
+
+      function startGame() {
+         canvas = document.getElementById("canvas");
+         ctx = canvas.getContext("2d");
+         loadImages();
+         draw();
+         setInterval(update, 1000 / 25);
+         setInterval(createUfos, 2500);
+         setInterval(checkCollision, 1000 / 25);
+         //calculate
+      };
+
+      function update () {
+         if (KEY_UP) {
+            rocket.y -= 5;
+         }
+         if (KEY_DOWN) {
+            rocket.y += 5;
+         }
+         ufos.forEach(function(ufo){
+            ufo.x -= 7;
+         });
+      };
+
+      function createUfos() {
+         let ufo = {
+            x: 1000,
+            //y: 200,
+            y: Math.random() * 500,
+            width: 150,
+            height: 80,
+            src: 'img/ufo.png', 
+            img: new Image()
+            //add random x/y points
+         };
+         ufo.img.src = ufo.src;
+         ufos.push(ufo);
+      };
+
+      function loadImages() {
+         backgroundImage.src = 'img/background.jpg';
+         rocket.img = new Image();
+         rocket.img.src = rocket.src;
+      };
+
+      function draw() {
+         ctx.drawImage(backgroundImage, 0, 0);
+         ctx.drawImage(rocket.img, rocket.x, rocket.y, rocket.width, rocket.height);
+
+         ufos.forEach(function(ufo){
+            ctx.drawImage(ufo.img, ufo.x, ufo.y, ufo.width, ufo.height);
+         })
+         requestAnimationFrame(draw);
+      };
+
+      function checkCollision() {
+         ufos.forEach(function(ufo) {
+            if (rocket.x + rocket.width > ufo.x  &&
+               rocket.y + rocket.height > ufo.y && 
+               rocket.x < ufo.x &&
+               rocket.y < ufo.y + ufo.height
+               ) {
+                  console.log("Colliosion!")
+                  rocket.img.src = "img/explosion.png";
+                  ufos = ufos.filter(u => u != ufo);
+
+            }
+         })
+      }
+   </script>
+   
+</head>
+
+<body onload="startGame()">
+   <canvas id="canvas" width="900" height="450"></canvas>
+</body>
+</html>
