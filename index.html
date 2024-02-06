@@ -10,6 +10,12 @@
       }
    </style>
 
+   <script type = "text/javascript" src="draw.js"></script>
+   <script type = "text/javascript" src="startgame.js"></script>
+   <script type = "text/javascript" src="update.js"></script>
+   <script type = "text/javascript" src="createUfos.js"></script>
+   <script type = "text/javascript" src="checkCollision.js"></script>
+
    <script>
 
       let KEY_SPACE = false;
@@ -53,74 +59,11 @@
          }
       };
 
-      function startGame() {
-         canvas = document.getElementById("canvas");
-         ctx = canvas.getContext("2d");
-         loadImages();
-         draw();
-         setInterval(update, 1000 / 25);
-         setInterval(createUfos, 2500);
-         setInterval(checkCollision, 1000 / 25);
-         //calculate
-      };
-
-      function update () {
-         if (KEY_UP) {
-            rocket.y -= 5;
-         }
-         if (KEY_DOWN) {
-            rocket.y += 5;
-         }
-         ufos.forEach(function(ufo){
-            ufo.x -= 7;
-         });
-      };
-
-      function createUfos() {
-         let ufo = {
-            x: 1000,
-            //y: 200,
-            y: Math.random() * 500,
-            width: 150,
-            height: 80,
-            src: 'img/ufo.png', 
-            img: new Image()
-            //add random x/y points
-         };
-         ufo.img.src = ufo.src;
-         ufos.push(ufo);
-      };
-
       function loadImages() {
          backgroundImage.src = 'img/background.jpg';
          rocket.img = new Image();
          rocket.img.src = rocket.src;
       };
-
-      function draw() {
-         ctx.drawImage(backgroundImage, 0, 0);
-         ctx.drawImage(rocket.img, rocket.x, rocket.y, rocket.width, rocket.height);
-
-         ufos.forEach(function(ufo){
-            ctx.drawImage(ufo.img, ufo.x, ufo.y, ufo.width, ufo.height);
-         })
-         requestAnimationFrame(draw);
-      };
-
-      function checkCollision() {
-         ufos.forEach(function(ufo) {
-            if (rocket.x + rocket.width > ufo.x  &&
-               rocket.y + rocket.height > ufo.y && 
-               rocket.x < ufo.x &&
-               rocket.y < ufo.y + ufo.height
-               ) {
-                  console.log("Colliosion!")
-                  rocket.img.src = "img/explosion.png";
-                  ufos = ufos.filter(u => u != ufo);
-
-            }
-         })
-      }
    </script>
    
 </head>
