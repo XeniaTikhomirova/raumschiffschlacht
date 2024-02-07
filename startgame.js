@@ -5,6 +5,7 @@ function startGame() {
    draw();
    setInterval(update, 1000 / 25);
    setInterval(createUfos, 2500);
+   setInterval(checkShots, 1000 / 10);
    setInterval(checkCollision, 1000 / 25);
-   //calculate
+   //calculate();
 };

@@ -4,38 +4,24 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Raumschiffschlacht</title>
-   <style>
-      canvas {
-         background: rgb(107, 107, 153);
-      }
-   </style>
 
+   <style src="styles.css"></style>
+
+   <!-- For jQuery -->
+   <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>-->
+
+   <script type = "text/javascript" src="index.js"></script>
    <script type = "text/javascript" src="draw.js"></script>
    <script type = "text/javascript" src="startgame.js"></script>
    <script type = "text/javascript" src="update.js"></script>
    <script type = "text/javascript" src="createUfos.js"></script>
    <script type = "text/javascript" src="checkCollision.js"></script>
+   <script type = "text/javascript" src="checkShots.js"></script>
+   <script type = "text/javascript" src="loadImg.js"></script>
 
    <script>
-
-      let KEY_SPACE = false;
-      let KEY_UP = false;
-      let KEY_DOWN = false;
-      let canvas;
-      let ctx;
-      let backgroundImage = new Image();
-      
-      let rocket = {
-         x: 100,
-         y: 200,
-         width: 150,
-         height: 80,
-         src: 'img/rocket.png'
-      };
-
-      let ufos = [];
-
       document.onkeydown = function(e) {
+
          if(e.keyCode == 32) {
             KEY_SPACE = true;
          }
@@ -44,6 +30,12 @@
          }
          if(e.keyCode == 40) {
             KEY_DOWN = true;
+         }
+         if(e.keyCode == 26) {
+            KEY_Rightwards = true;
+         }
+         if(e.keyCode == 27) {
+            KEY_Leftwards = true;
          }
       };
 
@@ -57,15 +49,15 @@
          if(e.keyCode == 40) {
             KEY_DOWN = false;
          }
+         if(e.keyCode == 26) {
+            KEY_Rightwards = false;
+         }
+         if(e.keyCode == 27) {
+            KEY_Leftwards = false;
+         }
       };
 
-      function loadImages() {
-         backgroundImage.src = 'img/background.jpg';
-         rocket.img = new Image();
-         rocket.img.src = rocket.src;
-      };
-   </script>
-   
+</script>
 </head>
 
 <body onload="startGame()">
