@@ -3,13 +3,9 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Raumschiffschlacht</title>
-
-   <style src="styles.css"></style>
-
-   <!-- For jQuery -->
+   <title>Start Game Raumschiffschlacht</title>
+      <!-- For jQuery -->
    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>-->
-
    <script type = "text/javascript" src="index.js"></script>
    <script type = "text/javascript" src="draw.js"></script>
    <script type = "text/javascript" src="startgame.js"></script>
@@ -19,48 +15,46 @@
    <script type = "text/javascript" src="checkShoots.js"></script>
    <script type = "text/javascript" src="loadImg.js"></script>
 
-   <script>
-      document.onkeydown = function(e) {
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-         if(e.keyCode == 32) {
-            KEY_SPACE = true;
-         }
-         if(e.keyCode == 38) {
-            KEY_UP = true;
-         }
-         if(e.keyCode == 40) {
-            KEY_DOWN = true;
-         }
-         if(e.keyCode == 26) {
-            KEY_Rightwards = true;
-         }
-         if(e.keyCode == 27) {
-            KEY_Leftwards = true;
-         }
-      };
+   <link rel="stylesheet" href="styles.css">
 
-      document.onkeyup = function(e) {
-         if(e.keyCode == 32) {
-            KEY_SPACE = false;
-         }
-         if(e.keyCode == 38) {
-            KEY_UP = false;
-         }
-         if(e.keyCode == 40) {
-            KEY_DOWN = false;
-         }
-         if(e.keyCode == 26) {
-            KEY_Rightwards = false;
-         }
-         if(e.keyCode == 27) {
-            KEY_Leftwards = false;
-         }
-      };
-
-</script>
 </head>
+<body>
+   <div class="main-page">
+      <video autoplay muted loop id="myVideo">
+         <source src="video/space_video.mp4" type="video/mp4">
+       </video>
 
-<body onload="startGame()">
-   <canvas id="canvas" width="900" height="450"></canvas>
-</body>
+       <div class="content">
+         <h1>Herzlich Wilkommen</h1>
+         <h2>Here ist ein Speil - Raumschiffschlacht</h2>
+         <!-- Use a button to pause/play the video with JavaScript -->
+         <div>
+            <button id="myBtn" onclick="stopFunc()">Pause Video</button>
+            <button class="game-start-btn" onclick="document.location='start.html'">Spiel Starten</button>
+            
+         </div>
+       </div>
+   </div>
+
+   <script>
+      let video = document.getElementById("myVideo");
+      let btn = document.getElementById("myBtn");
+      let btnGame = document.getElementsByClassName("game-start-btn");
+
+      function stopFunc() {
+        if (video.paused) {
+          video.play();
+          btn.innerHTML = "Pause";
+        } else {
+          video.pause();
+          btn.innerHTML = "Play";
+        }
+      };
+
+      </script>
+</body>   
 </html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Raumschiffschlacht</title>
+
+   <!--<style src="styles.css"></style>-->
+   <link rel="stylesheet" href="styles.css">
+
+   <!-- For jQuery -->
+   <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>-->
+
+   <script type = "text/javascript" src="index.js"></script>
+   <script type = "text/javascript" src="draw.js"></script>
+   <script type = "text/javascript" src="startgame.js"></script>
+   <script type = "text/javascript" src="update.js"></script>
+   <script type = "text/javascript" src="createUfos.js"></script>
+   <script type = "text/javascript" src="checkCollision.js"></script>
+   <script type = "text/javascript" src="checkShoots.js"></script>
+   <script type = "text/javascript" src="loadImg.js"></script>
+
+   <script>
+      document.onkeydown = function(e) {
+
+         if(e.keyCode == 32) {
+            KEY_SPACE = true;
+         }
+         if(e.keyCode == 38) {
+            KEY_UP = true;
+         }
+         if(e.keyCode == 40) {
+            KEY_DOWN = true;
+         }
+         if(e.keyCode == 26) {
+            KEY_Rightwards = true;
+         }
+         if(e.keyCode == 27) {
+            KEY_Leftwards = true;
+         }
+      };
+
+      document.onkeyup = function(e) {
+         if(e.keyCode == 32) {
+            KEY_SPACE = false;
+         }
+         if(e.keyCode == 38) {
+            KEY_UP = false;
+         }
+         if(e.keyCode == 40) {
+            KEY_DOWN = false;
+         }
+         if(e.keyCode == 26) {
+            KEY_Rightwards = false;
+         }
+         if(e.keyCode == 27) {
+            KEY_Leftwards = false;
+         }
+      };
+
+</script>
+</head>
+
+<body onload="startGame()">
+   <canvas id="canvas" width="1250" height="850"></canvas>
+
+</body>
+</html>

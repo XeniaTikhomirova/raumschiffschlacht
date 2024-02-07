@@ -1,7 +1,6 @@
 function createUfos() {
    let ufo = {
-      x: 1000,
-      //y: 200,
+      x: 1500,
       y: Math.random() * 450,
       width: 150,
       height: 80,
