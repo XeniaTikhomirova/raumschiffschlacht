@@ -1,6 +1,6 @@
-function checkShots() {
+function checkShoots() {
    if (KEY_SPACE) {
-      let shot = {
+      let shoot = {
          x: rocket.x + rocket.width,
          y: rocket.y + (rocket.width / 4.5),
          width: 60,
@@ -8,8 +8,8 @@ function checkShots() {
          src: 'img/shell.png', 
          img: new Image()
       };
-      shot.img.src = shot.src;
-      shots.push(shot);
+      shoot.img.src = shoot.src;
+      shoots.push(shoot);
    }
 };
 

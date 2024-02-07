@@ -6,8 +6,8 @@ function draw() {
       ctx.drawImage(ufo.img, ufo.x, ufo.y, ufo.width, ufo.height);
    })
 
-   shots.forEach(function(shot){
-      ctx.drawImage(shot.img, shot.x, shot.y, shot.width, shot.height);
+   shoots.forEach(function(shoot){
+      ctx.drawImage(shoot.img, shoot.x, shoot.y, shoot.width, shoot.height);
    })
 
    requestAnimationFrame(draw);

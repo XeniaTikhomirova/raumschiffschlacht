@@ -18,8 +18,8 @@ function update () {
       }
    });
 
-   shots.forEach(function(shot){
-   shot.x += 15;
+   shoots.forEach(function(shoot){
+   shoot.x += 15;
    });
 
 };

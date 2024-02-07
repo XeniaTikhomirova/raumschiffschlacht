@@ -17,5 +17,5 @@ let rocket = {
    src: 'img/rocket.png'
 };
 
-let shots = [];
+let shoots = [];
 let ufos = [];

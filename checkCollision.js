@@ -10,26 +10,22 @@ function checkCollision() {
             ufos = ufos.filter(u => u != ufo);
          }
 
-   shots.forEach(function(shot) {
-      if (shot.x + shot.width > ufo.x  &&
-         shot.y + shot.height > ufo.y && 
-         shot.x < ufo.x &&
-         shot.y < ufo.y + ufo.height
+   shoots.forEach(function(shoot) {
+      if (shoot.x + shoot.width > ufo.x  &&
+         shoot.y + shoot.height > ufo.y && 
+         shoot.x < ufo.x &&
+         shoot.y < ufo.y + ufo.height
          ) {
             ufo.hit = true;
             console.log("Colliosion!")
             ufo.img.src = "img/explosion.png";
 
-            shots = shots.filter(s => s != shot);
+            shoots = shoots.filter(s => s != shoot);
 
             setTimeout(() => {
                ufos = ufos.filter(u => u != ufo)
             }, 2000);
       }
    })
-
-
    })
-
-
 }
