@@ -11,16 +11,21 @@
    <!-- For jQuery -->
    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>-->
 
-   <script type = "text/javascript" src="index.js"></script>
-   <script type = "text/javascript" src="draw.js"></script>
-   <script type = "text/javascript" src="startgame.js"></script>
-   <script type = "text/javascript" src="update.js"></script>
-   <script type = "text/javascript" src="createUfos.js"></script>
-   <script type = "text/javascript" src="checkCollision.js"></script>
-   <script type = "text/javascript" src="checkShoots.js"></script>
-   <script type = "text/javascript" src="loadImg.js"></script>
+   <script type = "text/javascript" src="index.js" defer></script>
+   <script type = "text/javascript" src="draw.js" defer></script>
+   <script type = "text/javascript" src="startgame.js" defer></script>
+   <script type = "text/javascript" src="update.js" defer></script>
+   <script type = "text/javascript" src="createUfos.js" defer></script>
+   <script type = "text/javascript" src="checkCollision.js" defer></script>
+   <script type = "text/javascript" src="checkShoots.js" defer></script>
+   <script type = "text/javascript" src="loadImg.js" defer></script>
+   <script type = "text/javascript" src="pauseGame.js" defer></script>
+   <script type = "text/javascript" src="gameOver.js" defer></script>
+   <script type = "text/javascript" src="video.js" defer></script>
 
    <script>
+
+
       document.onkeydown = function(e) {
 
          if(e.keyCode == 32) {
@@ -62,7 +67,18 @@
 </head>
 
 <body onload="startGame()">
-   <canvas id="canvas" width="1250" height="850"></canvas>
+   <div class="canvas-container">
+
+      <canvas id="canvas" width="1250" height="850"></canvas>
+
+      <div id="container-end">
+      <h1>Du hast verpielt!</h1>
+      <h2>Versuch noch ein Mal!</h2>
+
+   </div>
+   </div>
+
+   <button class="stop-game-btn" onclick="pauseGame()">Pause</button>
 
 </body>
 </html>

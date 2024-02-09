@@ -6,14 +6,17 @@
    <title>Start Game Raumschiffschlacht</title>
       <!-- For jQuery -->
    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>-->
-   <script type = "text/javascript" src="index.js"></script>
-   <script type = "text/javascript" src="draw.js"></script>
-   <script type = "text/javascript" src="startgame.js"></script>
-   <script type = "text/javascript" src="update.js"></script>
-   <script type = "text/javascript" src="createUfos.js"></script>
-   <script type = "text/javascript" src="checkCollision.js"></script>
-   <script type = "text/javascript" src="checkShoots.js"></script>
-   <script type = "text/javascript" src="loadImg.js"></script>
+   <script type = "text/javascript" src="index.js" defer></script>
+   <script type = "text/javascript" src="draw.js" defer></script>
+   <script type = "text/javascript" src="startgame.js" defer></script>
+   <script type = "text/javascript" src="update.js" defer></script>
+   <script type = "text/javascript" src="createUfos.js" defer></script>
+   <script type = "text/javascript" src="checkCollision.js" defer></script>
+   <script type = "text/javascript" src="checkShoots.js" defer></script>
+   <script type = "text/javascript" src="loadImg.js" defer></script>
+   <script type = "text/javascript" src="gameOver.js" defer></script>
+
+   <script type = "text/javascript" src="video.js" defer></script>
 
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,31 +33,14 @@
 
        <div class="content">
          <h1>Herzlich Wilkommen</h1>
-         <h2>Here ist ein Speil - Raumschiffschlacht</h2>
+         <h2>Here ist ein Spiel - Raumschiffschlacht</h2>
          <!-- Use a button to pause/play the video with JavaScript -->
          <div>
             <button id="myBtn" onclick="stopFunc()">Pause Video</button>
             <button class="game-start-btn" onclick="document.location='start.html'">Spiel Starten</button>
-            
          </div>
        </div>
    </div>
 
-   <script>
-      let video = document.getElementById("myVideo");
-      let btn = document.getElementById("myBtn");
-      let btnGame = document.getElementsByClassName("game-start-btn");
-
-      function stopFunc() {
-        if (video.paused) {
-          video.play();
-          btn.innerHTML = "Pause";
-        } else {
-          video.pause();
-          btn.innerHTML = "Play";
-        }
-      };
-
-      </script>
-</body>   
+</body> 
 </html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Das Ende der Speil</title>
+   <link rel="stylesheet" href="styles.css">
+   <script type = "text/javascript" src="video.js" defer></script>
+</head>
+<body>
+
+   <div class="main-page">
+      <video autoplay muted loop id="myVideo">
+         <source src="video/space_video.mp4" type="video/mp4">
+       </video>
+
+       <div class="content">
+         <h1>Du hast verspillt!</h1>
+         <h2>Your scrore:</h2>
+         <h2>Es ist Zeit vergangen </h2>
+         <h2>So viele Ufo wird geschossen</h2>
+         <!-- Use a button to pause/play the video with JavaScript -->
+         <div>
+            <button id="myBtn" onclick="stopFunc()">Pause Video</button>
+            <button class="game-start-btn" onclick="document.location='start.html'">Ein neues Spiel starten</button>
+         </div>
+       </div>
+   </div>
+   
+</body>
+</html>

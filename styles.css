@@ -4,7 +4,46 @@
 
 canvas {
    background: rgb(107, 107, 153);
+   z-index: 0;
 }
+
+.canvas-container {
+   position: relative;
+}
+
+.canvas-container canvas,  #container-end, .stop-game-btn {
+   position: absolute;
+ }
+
+ #container-end {
+   height: 300px;
+   width: 400px;
+   text-align: center;
+   color: white;
+   font-weight: bold;
+   display: none;
+   margin: 0 auto;
+   left: 30%;
+   margin-top: 30%
+ }
+
+ .stop-game-btn {
+   margin: 0 auto;
+   left: 40%;
+   margin-top: 50%;
+   width: 100px;
+   font-size: 18px;
+   padding: 10px;
+   border: none;
+   background: #494949;
+   color: #fff;
+   cursor: pointer;
+ }
+
+ .stop-game-btn:hover {
+   background: #ddd;
+   color: black;
+ }
 
 .main-page {
    background: rgb(143, 143, 181);
@@ -33,7 +72,7 @@ canvas {
  }
 
  #myBtn, .game-start-btn {
-   width: 200px;
+   width: 300px;
    font-size: 18px;
    padding: 10px;
    border: none;

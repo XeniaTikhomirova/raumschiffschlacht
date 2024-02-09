@@ -10,5 +10,6 @@ function draw() {
       ctx.drawImage(shoot.img, shoot.x, shoot.y, shoot.width, shoot.height);
    })
 
+
    requestAnimationFrame(draw);
 };
