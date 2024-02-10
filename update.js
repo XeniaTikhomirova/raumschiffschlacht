@@ -1,3 +1,5 @@
+
+
 function update () {
    if (KEY_UP) {
       rocket.y -= 5;
@@ -14,6 +16,8 @@ function update () {
  
    ufos.forEach(function(ufo) {
       if (!ufo.hit) {
+
+         //declair global var
           ufo.x -= 7;
       }
    });

@@ -15,6 +15,7 @@
    <script type = "text/javascript" src="checkShoots.js" defer></script>
    <script type = "text/javascript" src="loadImg.js" defer></script>
    <script type = "text/javascript" src="gameOver.js" defer></script>
+   <script type = "text/javascript" src="pauseGame.js" defer></script>
 
    <script type = "text/javascript" src="video.js" defer></script>
 
@@ -36,7 +37,8 @@
          <h2>Here ist ein Spiel - Raumschiffschlacht</h2>
          <!-- Use a button to pause/play the video with JavaScript -->
          <div>
-            <button id="myBtn" onclick="stopFunc()">Pause Video</button>
+            <!--<button id="myBtn">Pause Video</button>-->
+            <button id="myBtn" onclick="pauseGame()">Pause Video</button>
             <button class="game-start-btn" onclick="document.location='start.html'">Spiel Starten</button>
          </div>
        </div>

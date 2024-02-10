@@ -11,7 +11,7 @@ canvas {
    position: relative;
 }
 
-.canvas-container canvas,  #container-end, .stop-game-btn {
+.canvas-container canvas,  #container-end, #stop-game-btn {
    position: absolute;
  }
 
@@ -27,7 +27,7 @@ canvas {
    margin-top: 30%
  }
 
- .stop-game-btn {
+ #stop-game-btn {
    margin: 0 auto;
    left: 40%;
    margin-top: 50%;
@@ -40,7 +40,7 @@ canvas {
    cursor: pointer;
  }
 
- .stop-game-btn:hover {
+ #stop-game-btn:hover {
    background: #ddd;
    color: black;
  }

@@ -65,20 +65,15 @@
 
 </script>
 </head>
-
 <body onload="startGame()">
    <div class="canvas-container">
-
       <canvas id="canvas" width="1250" height="850"></canvas>
-
       <div id="container-end">
-      <h1>Du hast verpielt!</h1>
+      <h1>Du hast verspielt!</h1>
       <h2>Versuch noch ein Mal!</h2>
-
    </div>
    </div>
-
-   <button class="stop-game-btn" onclick="pauseGame()">Pause</button>
-
+   <!--<button class="stop-game-btn" onClick={pauseGame()}>Pause</button>-->
+   <button id="stop-game-btn" onclick="pauseContinueGame()">Pause den Spiel</button>
 </body>
 </html>
