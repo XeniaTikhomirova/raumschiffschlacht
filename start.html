@@ -23,6 +23,8 @@
    <script type = "text/javascript" src="quit.js" defer></script>
    <script type = "text/javascript" src="gameOver.js" defer></script>
    <script type = "text/javascript" src="video.js" defer></script>
+   <script type = "text/javascript" src="timer.js" defer></script>
+
 
    <script>
       document.onkeydown = function(e) {
@@ -72,7 +74,13 @@
       <h2>Versuch noch ein Mal!</h2>
    </div>
    </div>
-   <!--<button class="stop-game-btn" onClick={pauseGame()}>Pause</button>-->
+   <!--<button id="myBtn" onclick="pauseVideo()">Pause</button>-->
+
+   <!--Place fot timer and other staff-->
+   <div class="info-box">
+      <h2 id="info-game">Timer<h2>
+   </div>
+
    <button id="stop-game-btn" onclick="pauseContinueGame()">Pausen den Spiel</button>
    <button id="quit-game-btn" onclick="quit()">Verlassen</button>
 </body>

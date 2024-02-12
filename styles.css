@@ -7,13 +7,13 @@ canvas {
    z-index: 0;
 }
 
-.canvas-container {
+/*.canvas-container {
    position: relative;
 }
 
 .canvas-container canvas,  #container-end, #stop-game-btn, #quit-game-btn {
    position: absolute;
- }
+ }*/
 
  #container-end {
    height: 300px;
@@ -38,6 +38,12 @@ canvas {
    background: #494949;
    color: #fff;
    cursor: pointer;
+ }
+
+ #info-game {
+   color: azure;  
+   background-color: aquamarine;
+   z-index: 100;
  }
 
  #stop-game-btn:hover {

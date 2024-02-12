@@ -2,7 +2,7 @@
    const btn = document.getElementById("myBtn");
    const btnGame = document.getElementsByClassName("game-start-btn");
 
-   function stopFunc() {
+   function pauseVideo() {
    if (video.paused) {
       video.play();
       btn.innerHTML = "Pause";
