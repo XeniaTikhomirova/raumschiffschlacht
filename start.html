@@ -20,12 +20,11 @@
    <script type = "text/javascript" src="checkShoots.js" defer></script>
    <script type = "text/javascript" src="loadImg.js" defer></script>
    <script type = "text/javascript" src="pauseGame.js" defer></script>
+   <script type = "text/javascript" src="quit.js" defer></script>
    <script type = "text/javascript" src="gameOver.js" defer></script>
    <script type = "text/javascript" src="video.js" defer></script>
 
    <script>
-
-
       document.onkeydown = function(e) {
 
          if(e.keyCode == 32) {
@@ -37,10 +36,10 @@
          if(e.keyCode == 40) {
             KEY_DOWN = true;
          }
-         if(e.keyCode == 26) {
+         if(e.keyCode == 39) {
             KEY_Rightwards = true;
          }
-         if(e.keyCode == 27) {
+         if(e.keyCode == 37) {
             KEY_Leftwards = true;
          }
       };
@@ -55,10 +54,10 @@
          if(e.keyCode == 40) {
             KEY_DOWN = false;
          }
-         if(e.keyCode == 26) {
+         if(e.keyCode == 39) {
             KEY_Rightwards = false;
          }
-         if(e.keyCode == 27) {
+         if(e.keyCode == 37) {
             KEY_Leftwards = false;
          }
       };
@@ -74,6 +73,7 @@
    </div>
    </div>
    <!--<button class="stop-game-btn" onClick={pauseGame()}>Pause</button>-->
-   <button id="stop-game-btn" onclick="pauseContinueGame()">Pause den Spiel</button>
+   <button id="stop-game-btn" onclick="pauseContinueGame()">Pausen den Spiel</button>
+   <button id="quit-game-btn" onclick="quit()">Verlassen</button>
 </body>
 </html>

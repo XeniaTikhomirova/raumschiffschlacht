@@ -11,7 +11,7 @@ function pauseContinueGame() {
    } else {
       gameStatus = true
       ufoGame = setInterval(createUfos, 2500);
-      btnCont.innerHTML = "Pause";
+      btnCont.innerHTML = "Pausen den Spiel";
       console.log("Ive commen back!")
    }
 };
