@@ -66,7 +66,7 @@
 
 </script>
 </head>
-<body onload="startGame()">
+<body onload="startGame(), startTimer()">
    <div class="canvas-container">
       <canvas id="canvas" width="1250" height="850"></canvas>
       <div id="container-end">
@@ -74,11 +74,10 @@
       <h2>Versuch noch ein Mal!</h2>
    </div>
    </div>
-   <!--<button id="myBtn" onclick="pauseVideo()">Pause</button>-->
 
-   <!--Place fot timer and other staff-->
-   <div class="info-box">
-      <h2 id="info-game">Timer<h2>
+   <!--Place for timer-->
+   <div class="timer">
+      <h2 id="time-elapsed">00:00</h2>
    </div>
 
    <button id="stop-game-btn" onclick="pauseContinueGame()">Pausen den Spiel</button>

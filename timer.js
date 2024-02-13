@@ -1,25 +1,39 @@
+let timer;
+let minutes = 0;
+let seconds = 0;
+let milsec = 0;
+const time = document.getElementById('time-elapsed').innerText = "Das Spiel läuft " + formattedTime;
+
+function startTimer() {
+   timer = setInterval(updateTimer, 1);
+};
+
 function updateTimer() {
-   let headerTime = document.getElementById("info-game");
-   let currentTime = new Date();
-   
-   //let hours = currentTime.getHours();
-   //let minutes = currentTime.getMinutes();
-   let seconds = currentTime.getSeconds();
+   milsec++;
+   if (milsec === 60) {
+      milsec = 0;
+      seconds++;
+   }
+   if (seconds === 60) {
+      seconds = 0;
+      minutes++;
+   }
 
-   //hours = (hours < 10) ? "0" + hours : hours;
-   //minutes = (minutes < 10) ? "0" + minutes : minutes;
-   seconds = (seconds < 10) ? "0" + seconds : seconds;
+   const formattedTime = `${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}:${milisec < 10 ? '0' : ''}${milisec}`;
 
-   //let formattedTime = hours + ":" + minutes + ":" + seconds;
-   let formattedTime = seconds;
-   headerTime.innerHTML = formattedTime;
-}
+   //document.getElementById('info-game').innerText = "Das Spiel läuft " + formattedTime;
 
-setInterval(updateTimer, 1000);
+   time = "Das Spiel läuft " + formattedTime;
 
-updateTimer();
+  };
 
+//let headerTime = document.getElementById("info-game");
+//let currentTime = new Date();
+//seconds = currentTime.getSeconds();
+//milsec = currentTime.getMilliseconds();
+//seconds = (seconds < 10) ? "0" + seconds : seconds;
+//milsec = (milsec < 10) ? "0" + milsec : milsec;
+//let formattedTime = seconds + ":" + milsec;
+//headerTime.innerHTML = "Das Spiel läuft " + formattedTime;
+//updateTimer();
 
-headerTime.innerHTML = time;
-
-console.log(time)

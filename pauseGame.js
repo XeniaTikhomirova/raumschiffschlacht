@@ -4,8 +4,8 @@ const btnCont = document.getElementById("stop-game-btn");
 function pauseContinueGame() {
    if (gameStatus == true) {
       gameStatus = false;
+      //Stop timer here
       ufo = clearInterval(ufoGame);
-      // change way of reducing the space on the X for Ufo
       btnCont.innerHTML = "Continue";
       console.log("Paused game");
    } else {

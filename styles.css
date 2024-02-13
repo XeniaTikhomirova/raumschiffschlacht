@@ -7,15 +7,15 @@ canvas {
    z-index: 0;
 }
 
-/*.canvas-container {
+.canvas-container {
    position: relative;
 }
 
-.canvas-container canvas,  #container-end, #stop-game-btn, #quit-game-btn {
+.canvas-container canvas,  #container-end, #stop-game-btn, #quit-game-btn, .timer {
    position: absolute;
- }*/
+ }
 
- #container-end {
+#container-end {
    height: 300px;
    width: 400px;
    text-align: center;
@@ -25,31 +25,32 @@ canvas {
    margin: 0 auto;
    left: 30%;
    margin-top: 30%
- }
+}
 
- #stop-game-btn {
-   margin: 0 auto;
+#stop-game-btn {
+   margin: 0;
+   padding: 10px;
    left: 40%;
-   margin-top: 50%;
+   margin-top: 40%;
    width: 100px;
    font-size: 18px;
-   padding: 10px;
    border: none;
    background: #494949;
    color: #fff;
    cursor: pointer;
- }
+}
 
- #info-game {
-   color: azure;  
-   background-color: aquamarine;
+#time-elapsed {
+   color: azure;
+   background-color: rgba(159, 127, 255, 0.25);
    z-index: 100;
- }
+   margin: 0 auto;
+}
 
- #stop-game-btn:hover {
+#stop-game-btn:hover {
    background: #ddd;
    color: black;
- }
+}
 
  #quit-game-btn {
    margin: 0 auto;
@@ -68,6 +69,13 @@ canvas {
    background: #ddd;
    color: black;
  }
+
+.timer {
+   height: 30px;
+   width: 30%;
+   margin: auto;
+   text-align: center;
+}
 
 .main-page {
    background: rgb(143, 143, 181);
