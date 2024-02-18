@@ -4,14 +4,13 @@
 
 canvas {
    background: rgb(107, 107, 153);
-   z-index: 0;
 }
 
 .canvas-container {
    position: relative;
 }
 
-.canvas-container canvas,  #container-end, #stop-game-btn, #quit-game-btn, .timer {
+.canvas-container canvas,  #container-end, .timer-container, .buttons-container {
    position: absolute;
  }
 
@@ -27,24 +26,19 @@ canvas {
    margin-top: 30%
 }
 
-#stop-game-btn {
-   margin: 0;
-   padding: 10px;
-   left: 40%;
-   margin-top: 40%;
-   width: 100px;
-   font-size: 18px;
-   border: none;
-   background: #494949;
-   color: #fff;
-   cursor: pointer;
+.buttons-container {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   width: 630px;
+   margin-top: 800px;
+   margin-left: 300px;
 }
 
-#time-elapsed {
-   color: azure;
-   background-color: rgba(159, 127, 255, 0.25);
-   z-index: 100;
-   margin: 0 auto;
+#stop-game-btn {
+   background: #494949;
+   width: 300px;
+
 }
 
 #stop-game-btn:hover {
@@ -53,16 +47,8 @@ canvas {
 }
 
  #quit-game-btn {
-   margin: 0 auto;
-   left: 50%;
-   margin-top: 50%;
-   width: 50px;
-   font-size: 18px;
-   padding: 10px;
-   border: none;
    background: #494949;
-   color: #fff;
-   cursor: pointer;
+   width: 300px;
  }
 
  #quit-game-btn:hover {
@@ -70,11 +56,18 @@ canvas {
    color: black;
  }
 
-.timer {
+.timer-container {
    height: 30px;
    width: 30%;
    margin: auto;
    text-align: center;
+}
+
+#time-elapsed {
+   color: azure;
+   background-color: rgba(159, 127, 255, 0.25);
+   margin: 0 auto;
+   line-height: 2em;
 }
 
 .main-page {
@@ -103,7 +96,7 @@ canvas {
    text-align: center;
  }
 
- #myBtn, .game-start-btn, #quit-game-btn {
+ #myBtn, #quit-game-btn, #stop-game-btn, .game-start-btn {
    width: 300px;
    font-size: 18px;
    padding: 10px;
@@ -122,4 +115,3 @@ canvas {
    background: #ddd;
    color: black;
  }
-

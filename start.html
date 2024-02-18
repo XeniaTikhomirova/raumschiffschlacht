@@ -66,21 +66,31 @@
 
 </script>
 </head>
-<body onload="startGame(), startTimer()">
+
+<body onload="startGame()">
+
    <div class="canvas-container">
+
       <canvas id="canvas" width="1250" height="850"></canvas>
+
       <div id="container-end">
-      <h1>Du hast verspielt!</h1>
-      <h2>Versuch noch ein Mal!</h2>
-   </div>
+         <h1>Du hast verspielt!</h1>
+         <h2>Versuch noch ein Mal!</h2>
+      </div>
+
    </div>
 
    <!--Place for timer-->
-   <div class="timer">
-      <h2 id="time-elapsed">00:00</h2>
+   <div class="timer-container">
+      <h2 id="time-elapsed">00:00:00</h2>
    </div>
 
-   <button id="stop-game-btn" onclick="pauseContinueGame()">Pausen den Spiel</button>
-   <button id="quit-game-btn" onclick="quit()">Verlassen</button>
+   <div class="buttons-container">
+      <button id="stop-game-btn" onclick="pauseContinueGame()">Pausen den Spiel</button>
+      <button id="quit-game-btn" onclick="quit()">Verlassen</button>
+   </div>
+
+
+
 </body>
 </html>

@@ -9,5 +9,7 @@ function startGame() {
    ufoGame = setInterval(createUfos, 2500);
    setInterval(checkShoots, 1000 / 10);
    setInterval(checkCollision, 1000 / 25);
+   startTimer();
 };
+
 
