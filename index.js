@@ -1,5 +1,5 @@
 // Buttons for Play
-let KEY_SPACE = false;
+let KEY_S = false;
 let KEY_UP = false;
 let KEY_DOWN = false;
 let KEY_Rightwards = false;

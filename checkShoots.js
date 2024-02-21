@@ -1,5 +1,5 @@
 function checkShoots() {
-   if (KEY_SPACE) {
+   if (KEY_S) {
       let shoot = {
          x: rocket.x + rocket.width,
          y: rocket.y + (rocket.width / 4.5),
