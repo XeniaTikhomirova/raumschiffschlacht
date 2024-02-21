@@ -4,10 +4,7 @@ const btnCont = document.getElementById("stop-game-btn");
 function pauseContinueGame() {
    if (gameStatus == true) {
       gameStatus = false;
-
-      //Stop timer here
-      //timer = clearInterval(startTimer);
-
+      clearInterval(timer);
       ufo = clearInterval(ufoGame);
       btnCont.innerHTML = "Continue";
       console.log("Paused game");
@@ -15,6 +12,7 @@ function pauseContinueGame() {
       gameStatus = true
       ufoGame = setInterval(createUfos, 2500);
       btnCont.innerHTML = "Pausen den Spiel";
+      startTimer();
       console.log("Ive commen back!")
    }
 };

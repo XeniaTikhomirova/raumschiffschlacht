@@ -4,7 +4,6 @@ let seconds = 0;
 let milisec = 0;
 let formattedTime;
 
-
 function startTimer() {
    timer = setInterval(updateTimer, 10);
 }
