@@ -22,5 +22,10 @@ function updateTimer() {
    }
    formattedTime = `${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}:${milisec < 10 ? '0' : ''}${milisec}`;
    document.getElementById('time-elapsed').innerText = "Das Spiel läuft " + formattedTime;
+
+   if(timer == "stopped"){
+      console.log("STOP! Wir Haben VERSPIELT")
+      document.getElementById('time-end').innerText = "Das Spiel har verläuft " + formattedTime;
+   }
 }
 
