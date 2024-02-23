@@ -1,3 +1,5 @@
+   let timeEnd;
+   
    function checkCollision() {
       ufos.forEach(function(ufo) {
          if (rocket.x + rocket.width > ufo.x  &&
@@ -10,8 +12,9 @@
                ufos = ufos.filter(u => u != ufo);
                const popUpMsg = document.getElementById("container-end");
                popUpMsg.style.display = "block";
-               clearInterval(timer);
-               setTimeout(() => gameOver(), 3500);
+               //timeEnd=clearInterval(timer);
+               stopTimer();
+               //setTimeout(() => gameOver(), 3500);
    }
 
    shoots.forEach(function(shoot) {
