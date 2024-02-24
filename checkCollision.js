@@ -12,9 +12,9 @@
                ufos = ufos.filter(u => u != ufo);
                const popUpMsg = document.getElementById("container-end");
                popUpMsg.style.display = "block";
-               //timeEnd=clearInterval(timer);
                stopTimer();
-               //setTimeout(() => gameOver(), 3500);
+               //timeEnd=clearInterval(timer);
+               setTimeout(() => gameOver(), 3500);
    }
 
    shoots.forEach(function(shoot) {

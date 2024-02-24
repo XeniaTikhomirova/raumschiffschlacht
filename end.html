@@ -18,9 +18,11 @@
    <script type = "text/javascript" src="pauseGame.js" defer></script>
    <script type = "text/javascript" src="video.js" defer></script>
    <script type = "text/javascript" src="timer.js" defer></script>
+   <script type = "text/javascript" src="quit.js" defer></script>
+   <script type = "text/javascript" src="endPage.js" defer></script>
 
 </head>
-<body>
+<body onload="endPage()">
 
    <div class="main-page">
       <video autoplay muted loop id="myVideo">
@@ -30,7 +32,7 @@
        <div class="content">
          <h1>Du hast verspielt!</h1>
          <h2>Your scrore:</h2>
-         <h2 id="time-end">Zeit:</h2>
+         <h2 id="lastTimeEndfile">Zeit:</h2>
          <h2>So viele Ufo wird geschossen</h2>
          <!-- Use a button to pause/play the video with JavaScript -->
          <div>

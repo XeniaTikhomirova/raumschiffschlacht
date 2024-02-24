@@ -4,6 +4,7 @@ let seconds = 0;
 let milisec = 0;
 let formattedTime;
 let lastFormattedTime;
+let timeToShow;
 
 function startTimer() {
    timer = setInterval(updateTimer, 10);
@@ -14,35 +15,35 @@ function updateTimer() {
    if (milisec === 1000) {
       milisec = 0;
       seconds++;
-      console.log("It's SEC")
    }
    if (seconds === 60) {
       seconds = 0;
       minutes++;
-      console.log("It's MIN")
    }
    formattedTime = `${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}:${milisec < 10 ? '0' : ''}${milisec}`;
    document.getElementById('time-elapsed').innerText = "Das Spiel läuft " + formattedTime;
-   lastFormattedTime = formattedTime; 
+   updateLastFormattedTime();
   }
 
   function stopTimer() {
    clearInterval(timer);
    timer = null;
-   console.log("STOP! Wir haben VERSPIELT");
-   
-   const timeEndElement = document.getElementById("time-end");
-   
+   const timeEndElement = document.getElementById("lastTime");
+   timeToShow = "Zeit: " + formattedTime;
+ 
    if (timeEndElement) {
-      timeEndElement.innerText = "Zeit: " + lastFormattedTime;
+      timeEndElement.innerText = timeToShow;
    } else {
-      console.error("Element with ID 'time-end' not found");
-      //console.log("HTML content:", document.documentElement.outerHTML);
+      console.error("Element with ID 'lastTime' not found");
    }
-
-   //const popUpMsg = document.getElementById("container-end");
-   //popUpMsg.style.display = "block";
    setTimeout(() => gameOver(), 3500);
+
 }
 
+function updateLastFormattedTime() {
+   lastFormattedTime = formattedTime;
+}
 
+function getTimeToShow() {
+   return timeToShow;
+}
