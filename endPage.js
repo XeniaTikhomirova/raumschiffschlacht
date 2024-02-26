@@ -1,6 +1,7 @@
-function endPage() {
-   const timeEndFile = document.getElementById("lastTimeEndfile");
-   const timeToShowValue = getTimeToShow();
-   console.log(getTimeToShow)
-   timeEndFile.innerText = "Zeit: " + timeToShowValue;
+function endPage(x) {
+   x = localStorage.getItem("vOneLocalStorage");
+   console.log(x)
+   const timeEndFile = document.getElementById("lastTimeEndFile");
+   timeEndFile.innerText = "Zeit: " + x;
 }
+

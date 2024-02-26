@@ -4,7 +4,7 @@ let seconds = 0;
 let milisec = 0;
 let formattedTime;
 let lastFormattedTime;
-let timeToShow;
+let x;
 
 function startTimer() {
    timer = setInterval(updateTimer, 10);
@@ -22,28 +22,20 @@ function updateTimer() {
    }
    formattedTime = `${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}:${milisec < 10 ? '0' : ''}${milisec}`;
    document.getElementById('time-elapsed').innerText = "Das Spiel läuft " + formattedTime;
-   updateLastFormattedTime();
+   lastFormattedTime = formattedTime;
   }
 
   function stopTimer() {
    clearInterval(timer);
    timer = null;
    const timeEndElement = document.getElementById("lastTime");
-   timeToShow = "Zeit: " + formattedTime;
- 
+   timeToShow = "Zeit: " + lastFormattedTime;
+
    if (timeEndElement) {
       timeEndElement.innerText = timeToShow;
    } else {
       console.error("Element with ID 'lastTime' not found");
    }
-   setTimeout(() => gameOver(), 3500);
-
-}
-
-function updateLastFormattedTime() {
-   lastFormattedTime = formattedTime;
-}
-
-function getTimeToShow() {
-   return timeToShow;
+   localStorage.setItem("vOneLocalStorage", lastFormattedTime);
+   setTimeout(() => gameOver(lastFormattedTime), 3500);
 }
