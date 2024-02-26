@@ -3,8 +3,13 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Das Ende der Spiel</title>
+   <title>Regeln des Spieles</title>
+
+   <!--<style src="styles.css"></style>-->
    <link rel="stylesheet" href="styles.css">
+
+   <!-- For jQuery -->
+   <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>-->
 
    <script type = "text/javascript" src="index.js" defer></script>
    <script type = "text/javascript" src="draw.js" defer></script>
@@ -15,32 +20,36 @@
    <script type = "text/javascript" src="checkShoots.js" defer></script>
    <script type = "text/javascript" src="loadImg.js" defer></script>
    <script type = "text/javascript" src="pauseGame.js" defer></script>
-   <script type = "text/javascript" src="video.js" defer></script>
-   <script type = "text/javascript" src="endPage.js" defer></script>
-   <script type = "text/javascript" src="timer.js" defer></script>
-   <script type = "text/javascript" src="gameOver.js" defer></script>
    <script type = "text/javascript" src="quit.js" defer></script>
-
+   <script type = "text/javascript" src="gameOver.js" defer></script>
+   <script type = "text/javascript" src="video.js" defer></script>
+   <script type = "text/javascript" src="timer.js" defer></script>
 </head>
-<body onload="endPage()">
 
-   <div class="main-page">
+<body>
+
+   <div class="canvas-container">
       <video autoplay muted loop id="myVideo">
          <source src="video/space_video.mp4" type="video/mp4">
       </video>
 
-      <div class="content">
-         <h1>Du hast verspielt!</h1>
-         <h2>Your scrore:</h2>
-         <h2 id="lastTimeEndFile">Zeit:</h2>
-         <h2>So viele Ufo wird geschossen</h2>
-         <!-- Use a button to pause/play the video with JavaScript -->
-         <div>
-            <button id="myBtn" onclick="pauseVideo()">Video pausieren</button>
-            <button class="game-start-btn" onclick="document.location='start.html'">Ein neues Spiel starten</button>
-         </div>
-       </div>
+      <div class="rules-box">
+         <h1>Regeln:</h1>
+
+
+      </div>
+
+      <!--<canvas id="canvas" width="1250" height="850"></canvas>-->
+
    </div>
-   
+
+   <div class="buttons-container">
+      <button id="myBtn" onclick="pauseVideo()">Video pausieren</button>
+      <button class="game-start-btn" onclick="document.location='start.html'">Spiel starten</button>
+      <button id="quit-game-btn" onclick="quit()">Verlassen</button>
+   </div>
+
+
+
 </body>
 </html>

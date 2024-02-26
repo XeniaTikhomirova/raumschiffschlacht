@@ -10,7 +10,7 @@ canvas {
    position: relative;
 }
 
-.canvas-container canvas,  #container-end, .timer-container, .buttons-container {
+.canvas-container canvas,  #container-end, .timer-container, .buttons-container  {
    position: absolute;
  }
 
@@ -114,4 +114,16 @@ canvas {
  .game-start-btn:hover {
    background: #ddd;
    color: black;
+ }
+
+ .rules-box {
+   position: fixed;
+   margin-left: 300px;
+   margin-top: 70px;
+   text-align: center;
+   width: 100%;
+   width: 700px;
+   height: 700px;
+   background-color: #9393934f;
+   color: white;
  }
