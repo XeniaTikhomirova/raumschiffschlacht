@@ -20,3 +20,4 @@ let rocket = {
 let shoots = [];
 let ufos = [];
 let meteors = [];
+let asteroids =[];

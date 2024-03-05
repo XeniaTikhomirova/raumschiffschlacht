@@ -10,6 +10,10 @@ function draw() {
       ctx.drawImage(meteor.img, meteor.x, meteor.y, meteor.width, meteor.height);
    })
 
+   asteroids.forEach(function(asteroid){
+      ctx.drawImage(asteroid.img, asteroid.x, asteroid.y, asteroid.width, asteroid.height);
+   })
+
    shoots.forEach(function(shoot){
       ctx.drawImage(shoot.img, shoot.x, shoot.y, shoot.width, shoot.height);
    })

@@ -36,6 +36,21 @@ function update () {
          }}
    });
 
+   asteroids.forEach(function(asteroid) {
+      if (gameStatus == true) {
+         if (!asteroid.hit) {
+            asteroid.y += 8;
+            asteroid.x -= 8;
+            console.log(asteroid.y)
+         }
+      } else {
+         if (!asteroid.hit) {
+            asteroid.y += 0;
+            asteroid.x -= 0;
+            console.log("Asteroid stopped")
+         }};
+   });
+
    shoots.forEach(function(shoot){
    shoot.x += 15;
    });
