@@ -24,6 +24,18 @@ function update () {
          }}
    });
 
+   meteors.forEach(function(meteor) {
+      if (gameStatus == true) {
+         if (!meteor.hit) {
+            meteor.x -= 5;
+         }
+      } else {
+         if (!meteor.hit) {
+            meteor.x -= 0;
+            console.log("Meteor stopped")
+         }}
+   });
+
    shoots.forEach(function(shoot){
    shoot.x += 15;
    });

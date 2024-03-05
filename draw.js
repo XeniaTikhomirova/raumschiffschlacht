@@ -6,10 +6,12 @@ function draw() {
       ctx.drawImage(ufo.img, ufo.x, ufo.y, ufo.width, ufo.height);
    })
 
+   meteors.forEach(function(meteor){
+      ctx.drawImage(meteor.img, meteor.x, meteor.y, meteor.width, meteor.height);
+   })
+
    shoots.forEach(function(shoot){
       ctx.drawImage(shoot.img, shoot.x, shoot.y, shoot.width, shoot.height);
    })
-
-
    requestAnimationFrame(draw);
 };
