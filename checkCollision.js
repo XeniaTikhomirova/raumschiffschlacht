@@ -1,5 +1,7 @@
    let timeEnd;
-   
+   let counterShootedUfos = 0;
+   let z;
+
    function checkCollision() {
       ufos.forEach(function(ufo) {
          if (rocket.x + rocket.width > ufo.x  &&
@@ -10,10 +12,11 @@
                console.log("Colliosion!")
                rocket.img.src = "img/explosion.png";
                ufos = ufos.filter(u => u != ufo);
+
                const popUpMsg = document.getElementById("container-end");
                popUpMsg.style.display = "block";
+
                stopTimer();
-               //timeEnd=clearInterval(timer);
                setTimeout(() => gameOver(), 3500);
    }
 
@@ -23,6 +26,11 @@
          shoot.x < ufo.x &&
          shoot.y < ufo.y + ufo.height
          ) {
+
+            counterShootedUfos++;
+            console.log("So viel ufos " + counterShootedUfos)
+            z = localStorage.setItem("vThreeLocalStorage", counterShootedUfos);
+
             ufo.hit = true;
             console.log("Colliosion!")
             ufo.img.src = "img/explosion.png";
