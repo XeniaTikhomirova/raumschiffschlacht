@@ -1,0 +1,1 @@
+// here all Objects will be deleted from the game, when the fly away
