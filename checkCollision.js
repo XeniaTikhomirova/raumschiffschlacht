@@ -4,7 +4,7 @@
 
    function checkCollision() {
       ufos.forEach(function(ufo) {
-         if (rocket.x + rocket.width > ufo.x  &&
+         if (rocket.x + rocket.width > ufo.x &&
             rocket.y + rocket.height > ufo.y && 
             rocket.x < ufo.x &&
             rocket.y < ufo.y + ufo.height
@@ -18,18 +18,33 @@
             }
 
       meteors.forEach(function(meteor) {
-         if (rocket.x + rocket.width > meteor.x  &&
+         if (rocket.x + rocket.width > meteor.x &&
             rocket.y + rocket.height > meteor.y && 
             rocket.x < meteor.x &&
             rocket.y < meteor.y + meteor.height
             ) {
-               rocket.img.src = "img/explosion.png";
-               meteors = meteors.filter(u => u != meteor);
-               const popUpMsg = document.getElementById("container-end");
-               popUpMsg.style.display = "block";
-               stopTimer();
-               setTimeout(() => gameOver(), 3500);
+            rocket.img.src = "img/explosion.png";
+            meteors = meteors.filter(u => u != meteor);
+            const popUpMsg = document.getElementById("container-end");
+            popUpMsg.style.display = "block";
+            stopTimer();
+            setTimeout(() => gameOver(), 3500);
             }
+      })
+
+      asteroids.forEach(function(asteroid) {
+         if (rocket.x + rocket.width > asteroid.x &&
+            rocket.y + rocket.height > asteroid.y &&
+            rocket.x < asteroid.x &&
+            rocket.y < asteroid.y + asteroid.height )
+         {
+            rocket.img.src = "img/explosion.png";
+            asteroids = asteroids.filter(u => u != asteroid);
+            const popUpMsg = document.getElementById("container-end");
+            popUpMsg.style.display = "block";
+            stopTimer();
+            setTimeout(() => gameOver(), 3500);
+         }
       })
       
    shoots.forEach(function(shoot) {
@@ -48,9 +63,6 @@
             }, 2000);
       }
    })
-
-         // control for Asteroid & Rocket
-
    })
 }
 

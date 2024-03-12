@@ -37,8 +37,8 @@ function update () {
    asteroids.forEach(function(asteroid) {
       if (gameStatus == true) {
          if (!asteroid.hit) {
-            asteroid.y += 8;
-            asteroid.x -= 8;
+            asteroid.y += 2;
+            asteroid.x -= 2;
          }
       } else {
          if (!asteroid.hit) {

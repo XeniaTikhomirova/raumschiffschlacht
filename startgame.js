@@ -17,6 +17,8 @@ function startGame() {
 
    setInterval(checkCollision, 1000 / 25);
 
+   setInterval(cleanAll, 2000);
+
    startTimer();
 };
 
