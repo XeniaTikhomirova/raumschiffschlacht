@@ -9,7 +9,6 @@
             rocket.x < ufo.x &&
             rocket.y < ufo.y + ufo.height
             ) {
-               console.log("Colliosion!")
                rocket.img.src = "img/explosion.png";
                ufos = ufos.filter(u => u != ufo);
                const popUpMsg = document.getElementById("container-end");
@@ -24,7 +23,6 @@
             rocket.x < meteor.x &&
             rocket.y < meteor.y + meteor.height
             ) {
-               console.log("Colliosion mit Meteor!")
                rocket.img.src = "img/explosion.png";
                meteors = meteors.filter(u => u != meteor);
                const popUpMsg = document.getElementById("container-end");
@@ -33,19 +31,16 @@
                setTimeout(() => gameOver(), 3500);
             }
       })
-
+      
    shoots.forEach(function(shoot) {
       if (shoot.x + shoot.width > ufo.x  &&
          shoot.y + shoot.height > ufo.y && 
          shoot.x < ufo.x &&
          shoot.y < ufo.y + ufo.height
          ) {
-
             counterShootedUfos++;
-            console.log("So viel ufos " + counterShootedUfos)
             z = localStorage.setItem("vThreeLocalStorage", counterShootedUfos);
             ufo.hit = true;
-            console.log("Colliosion!")
             ufo.img.src = "img/explosion.png";
             shoots = shoots.filter(s => s != shoot);
             setTimeout(() => {
@@ -53,6 +48,9 @@
             }, 2000);
       }
    })
+
+         // control for Asteroid & Rocket
+
    })
 }
 

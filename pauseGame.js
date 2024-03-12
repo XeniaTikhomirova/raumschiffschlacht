@@ -6,6 +6,10 @@ function pauseContinueGame() {
       gameStatus = false;
       clearInterval(timer);
       ufo = clearInterval(ufoGame);
+
+      // clearInterval for Asteroid
+
+      
       btnCont.innerHTML = "Continue";
       console.log("Paused game");
    } else {
