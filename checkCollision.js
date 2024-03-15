@@ -56,6 +56,7 @@
             counterShootedUfos++;
             z = localStorage.setItem("vThreeLocalStorage", counterShootedUfos);
             ufo.hit = true;
+            console.log("Ufo is shooted!");
             ufo.img.src = "img/explosion.png";
             shoots = shoots.filter(s => s != shoot);
             setTimeout(() => {

@@ -11,6 +11,10 @@ function cleanAll() {
    meteors = meteors.filter(function(meteor){
       return meteor.x >= 0;
    });
+
+   shoots = shoots.filter(function(shoot){
+      return shoot.x <= 800;
+   })
 }
 
 

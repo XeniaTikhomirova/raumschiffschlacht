@@ -10,9 +10,9 @@ canvas {
    position: relative;
 }
 
-.canvas-container canvas,  #container-end, .timer-container, .buttons-container  {
+.canvas-container canvas,  #container-end, .timer-container, .buttons-container, #no-shell  {
    position: absolute;
- }
+}
 
 #container-end {
    height: 300px;
@@ -142,4 +142,16 @@ canvas {
 
 #counterShoot {
    font-size: 24px;
+}
+
+#no-shell {
+   height: 300px;
+   width: 400px;
+   text-align: center;
+   color: red;
+   font-weight: bold;
+   display: none;
+   margin: 0 auto;
+   left: 30%;
+   margin-top: 30%
 }
