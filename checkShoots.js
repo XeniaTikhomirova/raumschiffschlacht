@@ -2,6 +2,7 @@ let shoot;
 let counterShoot = 0;
 let y;
 let providedShoot = 10;
+let timeOutId;
 const shootMessage = document.getElementById("no-shell");
 
 function checkShoots() {
@@ -23,13 +24,15 @@ function checkShoots() {
          shoot.img.src = shoot.src;
          shoots.push(shoot);
       } else if (providedShoot < 1) {
-         console.log("you run out of shoots!");
-         shootMessage.style.display = "block";
-         setTimeout(function(){
-            shootMessage.style.display = "none";
-         }, 3000)
+         showMessageNoShoots()
          }
    }
 };
 
+async function showMessageNoShoots(){
+   console.log("You've run out of shots!");
+   shootMessage.style.display = "block";
+   await new Promise(resolve => setTimeout(resolve, 4000));
+   shootMessage.style.display = "none";
+}
 
