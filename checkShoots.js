@@ -1,9 +1,17 @@
+// to show message when there is no moew shots left:
+const shootMessage = document.getElementById("no-shell");
+
+// vars for counting shots:
 let shoot;
 let counterShoot = 0;
-let y;
 let providedShoot = 10;
-let timeOutId;
-const shootMessage = document.getElementById("no-shell");
+
+// to save and use data reklating to shots:
+let y;
+
+//  flag to fix a blinkong message:
+let noShootsMessageShown = false;
+
 
 function checkShoots() {
    if(gameStatus){
@@ -23,16 +31,18 @@ function checkShoots() {
          };
          shoot.img.src = shoot.src;
          shoots.push(shoot);
-      } else if (providedShoot < 1) {
-         showMessageNoShoots()
-         }
+      } else if (providedShoot < 1 && !noShootsMessageShown) {
+         showMessageNoShoots();
+      }
    }
 };
 
-async function showMessageNoShoots(){
+function showMessageNoShoots(){
    console.log("You've run out of shots!");
    shootMessage.style.display = "block";
-   await new Promise(resolve => setTimeout(resolve, 4000));
-   shootMessage.style.display = "none";
-}
+   setTimeout(() => {
+      shootMessage.style.display = "none";
+   }, 2000);
+   noShootsMessageShown = true;
+};
 
