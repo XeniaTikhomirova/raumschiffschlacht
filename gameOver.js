@@ -3,5 +3,5 @@ function gameOver(lastFormattedTime) {
    window.location.assign(
       "file:///Users/kseniatikhomirova/Desktop/main/Ausbildung/SpaceGame/end.html"
     );
-   // window.location.assign("end.html");
+   window.location.assign("end.html");
 }
