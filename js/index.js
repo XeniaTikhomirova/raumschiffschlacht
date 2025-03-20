@@ -1,12 +1,13 @@
 let ufoGame = null;
 
-// Buttons for Play
+// Buttons for Play - positioning-> diff_scenarios.html
 let KEY_S = false;
 let KEY_UP = false;
 let KEY_DOWN = false;
 let KEY_Rightwards = false;
 let KEY_Leftwards = false;
 
+// The Player:
 let rocket = {
    x: 20,
    y: 200,
@@ -18,7 +19,6 @@ let rocket = {
 
 function startGame() {
    // to empty the local storage for shoots
-   
    y = localStorage.removeItem("vTwoLocalStorage", counterShoot);
    z = localStorage.removeItem("vThreeLocalStorage", counterShootedUfos);
 
