@@ -4,26 +4,23 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Das Ende der Spiel</title>
-   <link rel="stylesheet" href="styles.css">
+   <link rel="stylesheet" href="../css/styles.css">
 
-   <script type = "text/javascript" src="index.js" defer></script>
-   <script type = "text/javascript" src="draw.js" defer></script>
-   <script type = "text/javascript" src="startgame.js" defer></script>
-   <script type = "text/javascript" src="loadImg.js" defer></script>
-   <script type = "text/javascript" src="video.js" defer></script>
-   <script type = "text/javascript" src="endPage.js" defer></script>
-   <script type = "text/javascript" src="timer.js" defer></script>
-   <script type = "text/javascript" src="quit.js" defer></script>
+   <script type = "text/javascript" src="../js/index.js" defer></script>
+   <script type = "text/javascript" src="../js/draw.js" defer></script>
+   <script type = "text/javascript" src="../js/video.js" defer></script>
+   <script type = "text/javascript" src="../js/endPage.js" defer></script>
+   <script type = "text/javascript" src="../js/timer.js" defer></script>
 
 </head>
 <body onload="endPage()">
 
    <div class="main-page">
       <video autoplay muted loop id="myVideo">
-         <source src="video/space_video.mp4" type="video/mp4">
+         <source src="../audio_video/video/space_video.mp4" type="video/mp4">
       </video>
       <audio controls autoplay>
-         <source src="musicStart.mp3" type="audio/mpeg">
+         <source src="../audio_video/musicStart.mp3" type="audio/mpeg">
        </audio>
 
       <div class="content">
@@ -35,7 +32,7 @@
          <!-- Use a button to pause/play the video with JavaScript -->
          <div>
             <button id="myBtn" onclick="pauseVideo()">Video pausieren</button>
-            <button class="game-start-btn" onclick="document.location='start.html'">Ein neues Spiel starten</button>
+            <button class="game-start-btn" onclick="document.location='diff_scenarios.html'">Ein neues Spiel starten</button>
          </div>
        </div>
    </div>

@@ -1,4 +1,5 @@
 let asteroid; 
+let asteroids =[];
 
 function createAsteroids() {
    asteroid = {
@@ -6,7 +7,7 @@ function createAsteroids() {
       y: -85,
       width: 150,
       height: 80,
-      src: 'img/asteroid.png', 
+      src: '../img/asteroid.png', 
       img: new Image()
    };
    asteroid.img.src = asteroid.src;

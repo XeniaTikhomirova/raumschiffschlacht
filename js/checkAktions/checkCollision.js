@@ -1,6 +1,6 @@
-   let timeEnd;
+   //let timeEnd;
    let counterShootedUfos = 0;
-   let z;
+   //let z;
 
    function checkCollision() {
       ufos.forEach(function(ufo) {
@@ -9,7 +9,7 @@
             rocket.x < ufo.x &&
             rocket.y < ufo.y + ufo.height
             ) {
-               rocket.img.src = "img/explosion.png";
+               rocket.img.src = "../../img/explosion.png";
                ufos = ufos.filter(u => u != ufo);
                const popUpMsg = document.getElementById("container-end");
                popUpMsg.style.display = "block";
@@ -23,7 +23,7 @@
             rocket.x < meteor.x &&
             rocket.y < meteor.y + meteor.height
             ) {
-            rocket.img.src = "img/explosion.png";
+            rocket.img.src = "../../img/explosion.png";
             meteors = meteors.filter(u => u != meteor);
             const popUpMsg = document.getElementById("container-end");
             popUpMsg.style.display = "block";
@@ -38,7 +38,7 @@
             rocket.x < asteroid.x &&
             rocket.y < asteroid.y + asteroid.height )
          {
-            rocket.img.src = "img/explosion.png";
+            rocket.img.src = "../../img/explosion.png";
             asteroids = asteroids.filter(u => u != asteroid);
             const popUpMsg = document.getElementById("container-end");
             popUpMsg.style.display = "block";
@@ -57,7 +57,7 @@
             z = localStorage.setItem("vThreeLocalStorage", counterShootedUfos);
             ufo.hit = true;
             console.log("Ufo is shooted!");
-            ufo.img.src = "img/explosion.png";
+            ufo.img.src = "../../img/explosion.png";
             shoots = shoots.filter(s => s != shoot);
             setTimeout(() => {
                ufos = ufos.filter(u => u != ufo)

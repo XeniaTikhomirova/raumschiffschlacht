@@ -1,3 +1,5 @@
+// Function to delete objects that have flown off the canvas:
+
 function cleanAll() {
 
    ufos = ufos.filter(function(ufo){

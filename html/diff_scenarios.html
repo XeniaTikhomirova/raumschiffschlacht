@@ -6,27 +6,21 @@
    <title>Raumschiffschlacht</title>
 
    <!--<style src="styles.css"></style>-->
-   <link rel="stylesheet" href="styles.css">
+   <link rel="stylesheet" href="../css/styles.css">
 
-   <!-- For jQuery -->
-   <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>-->
-
-   <script type = "text/javascript" src="index.js" defer></script>
-   <script type = "text/javascript" src="draw.js" defer></script>
-   <script type = "text/javascript" src="startgame.js" defer></script>
-   <script type = "text/javascript" src="update.js" defer></script>
-   <script type = "text/javascript" src="createUfos.js" defer></script>
-   <script type = "text/javascript" src="createMeteors.js" defer></script>
-   <script type = "text/javascript" src="createAsteroids.js" defer></script>
-   <script type = "text/javascript" src="checkCollision.js" defer></script>
-   <script type = "text/javascript" src="checkShoots.js" defer></script>
-   <script type = "text/javascript" src="loadImg.js" defer></script>
-   <script type = "text/javascript" src="pauseGame.js" defer></script>
-   <script type = "text/javascript" src="quit.js" defer></script>
-   <script type = "text/javascript" src="gameOver.js" defer></script>
-   <script type = "text/javascript" src="video.js" defer></script>
-   <script type = "text/javascript" src="timer.js" defer></script>
-   <script type = "text/javascript" src="cleanObjects.js" defer></script>
+   <script type = "text/javascript" src="../js/index.js" defer></script>
+   <script type = "text/javascript" src="../js/draw.js" defer></script>
+   <script type = "text/javascript" src="../js/update.js" defer></script>
+   <script type = "text/javascript" src="../js/createObjects/createUfos.js" defer></script>
+   <script type = "text/javascript" src="../js/createObjects/createMeteors.js" defer></script>
+   <script type = "text/javascript" src="../js/createObjects/createAsteroids.js" defer></script>
+   <script type = "text/javascript" src="../js/checkAktions/checkCollision.js" defer></script>
+   <script type = "text/javascript" src="../js/checkAktions/checkShoots.js" defer></script>
+   <script type = "text/javascript" src="../js/pauseGame.js" defer></script>
+   <script type = "text/javascript" src="../js/gameOver.js" defer></script>
+   <script type = "text/javascript" src="../js/video.js" defer></script>
+   <script type = "text/javascript" src="../js/timer.js" defer></script>
+   <script type = "text/javascript" src="../js/cleanObjects.js" defer></script>
 
    <script defer>
       document.onkeydown = function(e) {
@@ -72,16 +66,22 @@
 <body onload="startGame()">
    <div class="canvas-container">
       <canvas id="canvas" width="1250" height="850"></canvas>
+
       <div id="container-end">
+         // Wenn you loose:
          <h1>Du hast verspielt!</h1>
          <h2 id="lastTime"></h2>
          <h2>Versuch noch ein Mal!</h2>
       </div>
+
    </div>
+   
+   // This field will be shown no matter what:
    <div class="timer-container">
       <h2 id="time-elapsed">00:00:00</h2>
    </div>
 
+   // Wenn you loose:
    <div id="no-shell">
       <h2>Du hast alle Schüsse benutzt</h2>
       <h2>Es gibt keine Schüsse mehr</h2>
@@ -89,7 +89,7 @@
 
    <div class="buttons-container">
       <button id="stop-game-btn" onclick="pauseContinueGame()">Pausen den Spiel</button>
-      <button id="quit-game-btn" onclick="quit()">Verlassen</button>
+      <button id="quit-game-btn" onclick="document.location='index.html'">Verlassen</button>
    </div>
 </body>
 </html>

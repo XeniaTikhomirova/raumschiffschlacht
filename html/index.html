@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Start Spiel Raumschiffschlacht</title>
+      <!-- For jQuery -->
+   <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>-->
+   <script type = "text/javascript" src="../js/index.js" defer></script>
+   <script type = "text/javascript" src="../js/draw.js" defer></script>
+   <script type = "text/javascript" src="../js/update.js" defer></script>
+   <script type = "text/javascript" src="../js/createObjects/createUfos.js" defer></script>
+   <script type = "text/javascript" src="../js/createObjects/createMeteors.js" defer></script>
+   <script type = "text/javascript" src="../js/createObjects/createAsteroids.js" defer></script>
+   <script type = "text/javascript" src="../js/checkAktions/checkCollision.js" defer></script>
+   <script type = "text/javascript" src="../js/checkAktions/checkShoots.js" defer></script>
+   <script type = "text/javascript" src="../js/gameOver.js" defer></script>
+   <script type = "text/javascript" src="../js/pauseGame.js" defer></script>
+   <script type = "text/javascript" src="../js/video.js" defer></script>
+   <script type = "text/javascript" src="../js/timer.js" defer></script>
+   <script type = "text/javascript" src="../js/cleanObjects.js" defer></script>
+
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+   <link rel="stylesheet" href="../css/styles.css">
+
+</head>
+<body>
+   <div class="main-page">
+      <video autoplay muted loop id="myVideo">
+         <source src="../audio_video/video/space_video.mp4" type="video/mp4">
+       </video>
+
+       <audio controls autoplay>
+         <source src="../audio_video/musicStart.mp3" type="audio/mpeg">
+       </audio>
+
+
+       <div class="content">
+         <h1>Herzlich Willkommen</h1>
+         <h2>Hier ist ein Spiel - Raumschiffschlacht</h2>
+
+         <!-- Use a button to pause/play the video with JavaScript -->
+         <div>
+            <button id="myBtn" onclick="pauseVideo()">Video pausieren</button>
+            <button class="game-start-btn" onclick="document.location='diff_scenarios.html'">Spiel starten</button>
+            <button class="game-start-btn" onclick="document.location='regeln.html'">Lesen die Regeln</button>
+            
+         </div>
+       </div>
+   </div>
+
+</body> 
+</html>

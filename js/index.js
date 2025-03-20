@@ -1,5 +1,21 @@
 let ufoGame = null;
 
+// Buttons for Play
+let KEY_S = false;
+let KEY_UP = false;
+let KEY_DOWN = false;
+let KEY_Rightwards = false;
+let KEY_Leftwards = false;
+
+let rocket = {
+   x: 20,
+   y: 200,
+   width: 150,
+   height: 80,
+   src: '../img/rocket.png'
+};
+
+
 function startGame() {
    // to empty the local storage for shoots
    
@@ -25,6 +41,12 @@ function startGame() {
    setInterval(cleanAll, 2000);
 
    startTimer();
+};
+
+function loadImages() {
+   backgroundImage.src = '../img/background.jpg';
+   rocket.img = new Image();
+   rocket.img.src = rocket.src;
 };
 
 

@@ -1,3 +1,7 @@
+let canvas;
+let ctx;
+let backgroundImage = new Image();
+
 function draw() {
    ctx.drawImage(backgroundImage, 0, 0);
    ctx.drawImage(rocket.img, rocket.x, rocket.y, rocket.width, rocket.height);

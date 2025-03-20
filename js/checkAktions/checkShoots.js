@@ -1,15 +1,18 @@
+// Buttons for play are located in index.js file
 // to show message when there is no moew shots left:
 const shootMessage = document.getElementById("no-shell");
 
 // vars for counting shots:
 let shoot;
+let shoots = [];
+
 let counterShoot = 0;
 let providedShoot = 10;
 
 // to save and use data reklating to shots:
 let y;
 
-//  flag to fix a blinkong message:
+//  flag to fix a blinking message:
 let noShootsMessageShown = false;
 
 
@@ -26,7 +29,7 @@ function checkShoots() {
             y: rocket.y + (rocket.width / 4.5),
             width: 60,
             height: 40,
-            src: 'img/shell.png', 
+            src: '../../img/shell.png', 
             img: new Image()
          };
          shoot.img.src = shoot.src;
